@@ -1,0 +1,123 @@
+{
+  "menu": [
+    {
+      "url": "/admin/dashboard",
+      "name": "Dashboard",
+      "icon": "menu-icon tf-icons bx bx-home-circle",
+      "slug": "dashboard"
+    },
+    {
+        "url": "/admin/user-profile",
+        "name": "Profile",
+        "icon": "menu-icon tf-icons bx bx-user-circle",
+        "slug": ["user-profile","notification.index","setting-view"]
+    },
+    {
+        "url": "/admin/customer",
+        "name": "Customer",
+        "icon": "menu-icon tf-icons bx bx-group",
+        "slug": ["customer.index","customer.create","customer.edit"]
+    },
+    {
+        "url": "/order",
+        "name": "Order",
+        "icon": "menu-icon tf-icons bx bx-copy",
+        "slug": "order"
+    },
+
+    {
+        "url": "/admin/enquiry",
+        "name": "Enquiry",
+        "icon": "menu-icon tf-icons bx bx-group",
+        "slug": "enquiry.index"
+    },
+    {
+        "url": "/admin/team",
+        "name": "Team",
+        "icon": "menu-icon tf-icons bx bx-group",
+        "slug": ["team.index","team.create","team.edit"]
+    },
+
+    {
+        "name": "Products",
+        "icon": "menu-icon tf-icons bx bx-box",
+        "slug": ["product.index","product.create","product.edit","packing.index","packing.create","packing.edit"],
+        "submenu": [
+            {
+              "url": "/admin/product",
+              "name": "Products",
+              "slug": ["product.index","product.create","product.edit"]
+            },
+            {
+                "url": "/admin/packing",
+                "name": "Packaging Sizes",
+                "slug": ["packing.index","packing.create","packing.edit"]
+            }
+          ]
+    },
+    {
+        "url": "/blogs",
+        "name": "Blogs",
+        "icon": "menu-icon tf-icons bx bx-collection",
+        "slug": "blogs"
+    },
+    {
+      "name": "Location",
+      "icon": "menu-icon tf-icons bx bx bx-area",
+      "slug": ["city.index","city.create","city.edit"],
+      "submenu": [
+        {
+            "url": "admin/location/city",
+            "name": "City",
+            "slug": ["city.index","city.create","city.edit"]
+        }
+      ]
+    },
+    {
+    "name": "Reports",
+    "icon": "menu-icon tf-icons bx bx-spreadsheet",
+    "slug": "reports",
+    "submenu": [
+        {
+          "url": "/reports/visit",
+          "name": "Visit",
+          "slug": "reports-visit",
+          "target": "_blank"
+        },
+        {
+            "url": "/reports/vendor",
+            "name": "Vendor",
+            "slug": "reports-vendor",
+            "target": "_blank"
+        }
+      ]
+    },
+    {
+      "name": "Settings",
+      "icon": "menu-icon tf-icons bx bx-cog",
+      "slug": ["admin", "departments.index", "departments.create", "departments.edit","designation.index","designation.create","designation.edit","roles.index","roles.create","roles.edit"],
+      "submenu": [
+        {
+            "url": "/admin/user-list",
+            "name": "Employee",
+            "slug": ["admin-user-add","admin-user-list","admin-user-update"]
+        },
+        {
+            "url": "/admin/departments",
+            "name": "Departments",
+            "slug": "departments.index"
+        },
+        {
+            "url": "/admin/designation",
+            "name": "Designations",
+            "slug": "designation.index"
+        },
+        {
+            "url": "/admin/roles",
+            "name": "Roles",
+            "slug": "roles.index"
+        }
+      ]
+    }
+  ]
+}
