@@ -141,4 +141,20 @@ class CustomerService
 
         return $customers->latest()->get();
     }
+
+    public function createCustomer($request){
+        $user = User::create([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'mobile' => $request->mobile,
+            'address' => $request->address,
+            'state_id' => $request->state_id,
+            'city_id' => $request->city_id,
+            'pincode' => $request->pincode,
+            'is_active' => 1,
+            'email' => $request->email,
+        ]);
+
+        return $user;
+    }
 }

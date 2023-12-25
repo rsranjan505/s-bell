@@ -10,10 +10,12 @@ use App\Models\Role;
 use App\Models\State;
 use App\Models\Team;
 use App\Models\User;
+use App\Rules\UserRule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
@@ -37,7 +39,8 @@ class UserController extends Controller
             $request->validate([
                 'first_name' => 'required',
                 'last_name' => 'required',
-                'mobile' => 'required|min:10',
+                'mobile'=>['required','min:10','numeric',new UserRule($request->input('user_type'))],
+                // 'mobile'=>['required',Rule::unique('users', 'user_type')->where('mobile', $request->input('mobile'))->where('user_type', $request->input('user_type'))],
                 'roles' => 'required',
                 'user_type' => 'required',
                 'email' => 'required|email|unique:users,email',
@@ -48,7 +51,7 @@ class UserController extends Controller
             $request->validate([
                 'first_name' => 'required',
                 'last_name' => 'required',
-                'mobile' => 'required|min:10',
+                'mobile'=>['required','min:10','numeric',new UserRule($request->input('user_type'))],
             ]);
         }
 
