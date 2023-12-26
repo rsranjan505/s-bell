@@ -230,8 +230,8 @@ function confirmationDelete(type,id)
         url = 'product/'+id;
     }else if(type == 'team'){
         url = 'team/'+id;
-    }else if(type == 'packing'){
-        url = 'packing/'+id;
+    }else if(type == 'permissions'){
+        url = 'permissions/'+id;
     }else if(type == 'visit'){
         url = 'visit/'+id;
     }else if(type == 'vendor'){

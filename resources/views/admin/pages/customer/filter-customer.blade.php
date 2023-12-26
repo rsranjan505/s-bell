@@ -44,6 +44,9 @@
                     <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
                 @endcan
                 <div class="dropdown-menu">
+                    @can('can-generate-qr-code')
+                        <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#qrprofile_{{$item->id}}"  href="javascript:void(0);"><i class="bx bx-group me-1"></i> Qr Profile</a>
+                    @endcan
                     @can('can-customer-view-log')
                         <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#statuslog_{{$item->id}}"  href="javascript:void(0);"><i class="bx bx-group me-1"></i> customer Logs</a>
                     @endcan
@@ -63,11 +66,14 @@
                     @can('can-customer-delete')
                         <a class="dropdown-item" onclick="confirmationDelete('customer',{{$item->id}})" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Delete</a>
                     @endcan
+
+
                 </div>
             </div>
         </td>
     </tr>
 
+    @include('admin.components.modal.qr-code-profile',['item' => $item] )
     {{-- @include('admin.components.modal.status-log',['item' => $item] )
     @include('admin.components.modal.image-view',['item' => $item] )
     @include('admin.components.modal.customer-status',['item' => $item] )

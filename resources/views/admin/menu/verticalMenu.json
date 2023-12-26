@@ -113,6 +113,11 @@
             "slug": "designation.index"
         },
         {
+            "url": "/admin/permissions",
+            "name": "Permissions",
+            "slug": "permissions.index"
+        },
+        {
             "url": "/admin/roles",
             "name": "Roles",
             "slug": "roles.index"

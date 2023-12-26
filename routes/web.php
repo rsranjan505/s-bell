@@ -8,8 +8,10 @@ use App\Http\Controllers\Admin\ResetPasswordRequestController;
 use App\Http\Controllers\Admin\Setting\DepartmentController;
 use App\Http\Controllers\Admin\Setting\DesignationController;
 use App\Http\Controllers\Admin\Setting\TeamController;
+use App\Http\Controllers\Admin\User\PermissionController;
 use App\Http\Controllers\Admin\User\RoleController;
 use App\Http\Controllers\Admin\User\UserController;
+use App\Http\Controllers\QrProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -54,6 +56,7 @@ Route::prefix('admin/')->middleware('auth','web')->group(function(){
         Route::get('team/change-status/{id}', [TeamController::class, 'changeStatus'])->name('team-status-change');
 
         Route::resource('roles', RoleController::class);
+        Route::resource('permissions', PermissionController::class);
         Route::resource('location/city', CityController::class);
         Route::get('city/{state_id}', [CityController::class, 'getCity'])->name('city.state');
         //users
@@ -72,5 +75,9 @@ Route::prefix('admin/')->middleware('auth','web')->group(function(){
 
         //Customer
         Route::resource('customer', CustomerController::class);
+
+        //QR CODE
+        Route::resource('qr-code', QrProfileController::class);
+        Route::get('qr-code',[QrProfileController::class,'generateQrCode'])->name('qr.generate');
 
 });

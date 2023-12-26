@@ -12,7 +12,7 @@
 <script src="{{ asset(mix('admin/assets/js/main.js')) }}"></script>
 
 {{-- custom script --}}
-<script src="{{ asset('admin/assets/js/anira.js') }}"></script>
+<script src="{{ asset('admin/assets/js/sortie.js') }}"></script>
 <script src="{{ asset('admin/assets/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>

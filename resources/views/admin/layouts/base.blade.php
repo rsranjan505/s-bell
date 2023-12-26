@@ -73,7 +73,7 @@
     <script src="{{ asset('admin/assets/js/tabs.js')}}"></script>
     <!-- Custom js for this page-->
     <script src="{{ asset('admin/assets/js/dashboard.js')}}"></script>
-    <script src="{{ asset('admin/assets/js/anira.js')}}"></script>
+    {{-- <script src="{{ asset('admin/assets/js/sortie.js')}}"></script> --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     @stack('scripts')
